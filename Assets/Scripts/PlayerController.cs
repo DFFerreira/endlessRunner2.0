@@ -7,20 +7,51 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float horizontalSpeed;
     [SerializeField] private float forwardSpeed;
 
+    [SerializeField] private float laneDistance;
+
+    Vector3 startPosition;
+    float targetPositionX;
+    private float LaneRight => startPosition.x + laneDistance;
+    private float LaneLeft => startPosition.x - laneDistance;
+
+    void Awake()
+    {
+        startPosition = transform.position;
+    }
+
     void Update()
     {
-        Vector3 targetPosition = transform.position;
+        Vector3 playerPosition = transform.position;
 
-        if (Input.GetKey(KeyCode.A))
+        ProcessInput();
+
+        playerPosition.x = ProcessLaneMove();
+        playerPosition.z = ProcessForwardMove();
+
+        transform.position = playerPosition;
+    }
+
+    void ProcessInput()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            targetPosition.x -= horizontalSpeed * Time.deltaTime;
+            targetPositionX -= laneDistance;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            targetPosition.x += horizontalSpeed * Time.deltaTime;
+            targetPositionX += laneDistance;
         }
 
-        targetPosition.z += forwardSpeed * Time.deltaTime;
-        transform.position = targetPosition;
+        targetPositionX = Mathf.Clamp(targetPositionX, LaneLeft, LaneRight);
+    }
+
+    float ProcessLaneMove()
+    {
+        return Mathf.Lerp(transform.position.x, targetPositionX, horizontalSpeed * Time.deltaTime);
+    }
+
+    float ProcessForwardMove()
+    {
+        return transform.position.z + forwardSpeed * Time.deltaTime;
     }
 }

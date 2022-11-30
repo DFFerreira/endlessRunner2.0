@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638048010205964198
-    m_Hash: 3521293456
+      ticks: 638053201244577287
+    m_Hash: 1341935307
   m_LockFileStatus:
     m_FilePath: C:/Users/Diego/Documents/EndlessRunner2.0/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638048012985815741
-    m_Hash: 2797659484
+      ticks: 638053201244587283
+    m_Hash: 4068469782
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
