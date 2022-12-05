@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float horizontalSpeed;
@@ -17,12 +18,14 @@ public class PlayerController : MonoBehaviour
 
     Vector3 startPosition;
     float targetPositionX;
+    public float JumpDuration => jumpDistanceZ / forwardSpeed;
     private float LaneRight => startPosition.x + laneDistance;
     private float LaneLeft => startPosition.x - laneDistance;
 
     void Awake()
     {
         startPosition = transform.position;
+        enabled = false;
     }
 
     void Update()
@@ -40,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
     void ProcessInput()
     {
+        
         if (Input.GetKeyDown(KeyCode.A))
         {
             targetPositionX -= laneDistance;

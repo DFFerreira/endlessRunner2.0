@@ -57,8 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerAnimController.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\JumpAnimState.cs" />
+    <Compile Include="Assets\Scripts\IdleAnimState.cs" />
+    <Compile Include="Assets\Scripts\StartAnimState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
