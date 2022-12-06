@@ -14,7 +14,7 @@ public class JumpAnimState : StateMachineBehaviour
 
             PlayerController player = animator.transform.parent.GetComponent<PlayerController>();
             float multiplier = jumpClipInfo.clip.length / player.JumpDuration;
-            animator.SetFloat(PlayerAnimConstans.jumpMultiplier, multiplier);
+            animator.SetFloat(PlayerAnimConstants.jumpMultiplier, multiplier);
         }
         
     }

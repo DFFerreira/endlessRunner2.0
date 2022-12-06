@@ -56,12 +56,17 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\PlayerAnimController.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\JumpAnimState.cs" />
-    <Compile Include="Assets\Scripts\IdleAnimState.cs" />
     <Compile Include="Assets\Scripts\StartAnimState.cs" />
+    <Compile Include="Assets\Scripts\IdleAnimState.cs" />
+    <Compile Include="Assets\Scripts\PlayerAnimConstants.cs" />
+    <Compile Include="Assets\Scripts\PlayerCollision.cs" />
+    <Compile Include="Assets\Scripts\RollAnimState.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\JumpAnimState.cs" />
+    <Compile Include="Assets\Scripts\PlayerAnimController.cs" />
+    <Compile Include="Assets\Scripts\Obstacle.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\GameMode.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

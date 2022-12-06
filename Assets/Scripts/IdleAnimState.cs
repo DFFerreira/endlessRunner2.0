@@ -13,7 +13,7 @@ public class IdleAnimState : StateMachineBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetBool(PlayerAnimConstans.start, true);
+            animator.SetBool(PlayerAnimConstants.start, true);
         }
     }
 

@@ -12,12 +12,22 @@ public class PlayerController : MonoBehaviour
     [Header("Jump")]
     [SerializeField] private float jumpDistanceZ;
     [SerializeField] private float jumpHighY;
+    [SerializeField] private float jumpLerpSpeed;
+
+    [Header("Roll")]
+    [SerializeField] private float rollDistanceZ;
+
+    float rollStartZ;
+    public bool IsRolling { get; private set; }
 
     float jumpStartZ;
     public bool IsJumping { get; private set; }
 
+
+
     Vector3 startPosition;
     float targetPositionX;
+    public float RollDuration => rollDistanceZ / forwardSpeed;
     public float JumpDuration => jumpDistanceZ / forwardSpeed;
     private float LaneRight => startPosition.x + laneDistance;
     private float LaneLeft => startPosition.x - laneDistance;
@@ -26,6 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         startPosition = transform.position;
         enabled = false;
+
     }
 
     void Update()
@@ -33,7 +44,8 @@ public class PlayerController : MonoBehaviour
         Vector3 playerPosition = transform.position;
 
         ProcessInput();
-        
+        ProcessRoll();
+
         playerPosition.y = ProcessJump();
         playerPosition.x = ProcessLaneMove();
         playerPosition.z = ProcessForwardMove();
@@ -42,7 +54,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void ProcessInput()
-    {
+    {        
         
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -54,11 +66,40 @@ public class PlayerController : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.W) && !IsJumping)
         {
-            IsJumping = true;
-            jumpStartZ = transform.position.z;
+            StartRoll();
+        }
+        if (Input.GetKeyDown(KeyCode.S) && !IsRolling)
+        {
+            StartJump();
         }
 
         targetPositionX = Mathf.Clamp(targetPositionX, LaneLeft, LaneRight);
+    }
+
+    void StartRoll()
+    {
+        IsRolling = false;
+        IsJumping = true;
+        jumpStartZ = transform.position.z;
+    }
+    void StartJump()
+    {
+        IsJumping = false;
+        IsRolling = true;
+        rollStartZ = transform.position.z;
+    }
+
+    void ProcessRoll()
+    {
+        if(IsRolling)
+        {
+            float rollCurrent = transform.position.z - rollStartZ;
+            float rollPercent = rollCurrent / rollDistanceZ;
+            if(rollPercent >= 1)
+            {
+                IsRolling = false;                
+            }
+        }
     }
 
     float ProcessLaneMove()
@@ -88,6 +129,15 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        return startPosition.y + deltaY;        
+        float targetPositionY = startPosition.y + deltaY;
+        return Mathf.Lerp(transform.position.y, targetPositionY, jumpLerpSpeed * Time.deltaTime);
+    }
+
+    public void Death()
+    {
+        forwardSpeed = 0;
+        horizontalSpeed = 0;
+        IsJumping = false;
+        IsRolling = false;
     }
 }
