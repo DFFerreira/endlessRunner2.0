@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 641592117274374301}
   - component: {fileID: 4612585255526133818}
-  - component: {fileID: -1904430443058351872}
+  - component: {fileID: 2226866467532520471}
   m_Layer: 0
   m_Name: Obstacle_Base
   m_TagString: Untagged
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036d6f26f48ef9e47ad80585616d0f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &-1904430443058351872
+--- !u!65 &2226866467532520471
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

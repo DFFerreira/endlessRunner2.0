@@ -56,17 +56,20 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\StartAnimState.cs" />
-    <Compile Include="Assets\Scripts\IdleAnimState.cs" />
-    <Compile Include="Assets\Scripts\PlayerAnimConstants.cs" />
-    <Compile Include="Assets\Scripts\PlayerCollision.cs" />
-    <Compile Include="Assets\Scripts\RollAnimState.cs" />
-    <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\JumpAnimState.cs" />
-    <Compile Include="Assets\Scripts\PlayerAnimController.cs" />
-    <Compile Include="Assets\Scripts\Obstacle.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\GameMode.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Animation\StartAnimState.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Animation\IdleAnimState.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Player\PlayerAnimConstants.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Player\PlayerCollision.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Animation\RollAnimState.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Animation\JumpAnimState.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Core\GameMode.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Player\PlayerAnimController.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Level\TrackSegment.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Level\Obstacle.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Level\EndlessTrackGenerator.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Level\ObstacleSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
