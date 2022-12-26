@@ -64,6 +64,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2346530737834914015, guid: 157ff90bb3768904faaf50db593e8729, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c1d6f669f6e367243986fdfd4874dc45, type: 2}
     - target: {fileID: 4362271381862281457, guid: 157ff90bb3768904faaf50db593e8729, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -112,6 +116,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track_Hard
       objectReference: {fileID: 0}
+    - target: {fileID: 7297952508601195471, guid: 157ff90bb3768904faaf50db593e8729, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c1d6f669f6e367243986fdfd4874dc45, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 157ff90bb3768904faaf50db593e8729, type: 3}
 --- !u!4 &6732806395357371314 stripped

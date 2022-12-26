@@ -401,11 +401,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710fad07dc28874439f485a73f0aff92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackPrefab:
+  player: {fileID: 1519214347}
+  trackPrefabEasy:
   - {fileID: 1239841122506628064, guid: 287305839a4e2a24894164e3c1396f41, type: 3}
+  trackPrefabHard:
   - {fileID: 1239841122506628064, guid: 09c9aeff087b66f48a9d750ca50f3286, type: 3}
+  trackPrefabReward:
+  - {fileID: 7557685007123696502, guid: 8bd264b95ffd6b54b82287628fe6dc13, type: 3}
   firstTrack: {fileID: 8129720692605989027, guid: 157ff90bb3768904faaf50db593e8729, type: 3}
-  initialTrackCount: 20
+  minTracksInFrontOfPlayer: 5
+  initialTrackCount: 5
+  minDistanceToConsiderInsideTrack: 3
+  hardTrackChance: 0.3
+  minTracksToReward: 5
+  minTrackCountRewardChance: 0.5
+  maxTrackCountRewardChance: 1
 --- !u!4 &1986288537
 Transform:
   m_ObjectHideFlags: 0
@@ -502,6 +512,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5975198312832080009, guid: 35f2dc6a485b8284096c5ca485749b29, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975198313511517998, guid: 35f2dc6a485b8284096c5ca485749b29, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975198314348550279, guid: 35f2dc6a485b8284096c5ca485749b29, type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

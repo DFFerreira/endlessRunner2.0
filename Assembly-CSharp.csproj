@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Runtime\Scripts\Animation\StartAnimState.cs" />
+    <Compile Include="Assets\Runtime\Scripts\Level\ObstacleSpawner.cs" />
     <Compile Include="Assets\Runtime\Scripts\Animation\IdleAnimState.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerAnimConstants.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerCollision.cs" />
@@ -69,7 +70,6 @@
     <Compile Include="Assets\Runtime\Scripts\Level\Obstacle.cs" />
     <Compile Include="Assets\Runtime\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Runtime\Scripts\Level\EndlessTrackGenerator.cs" />
-    <Compile Include="Assets\Runtime\Scripts\Level\ObstacleSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
