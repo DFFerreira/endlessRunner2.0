@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private PlayerController player;
     [SerializeField] private float armZ;
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         Vector3 currentPosition = transform.position;
         Vector3 targetPosition = player.transform.position;

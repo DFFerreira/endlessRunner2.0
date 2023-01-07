@@ -1,14 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    [SerializeField] Obstacle[] obstacle;
+    [SerializeField] private Obstacle[] obstaclePrefabOptions;
 
-    void Start()
+    private Obstacle currentObstacle;
+
+    public void SpawnObstacle()
     {
-        Instantiate(obstacle[Random.Range(0, obstacle.Length)], transform);
+        Obstacle prefab = obstaclePrefabOptions[Random.Range(0, obstaclePrefabOptions.Length)];
+        currentObstacle = Instantiate(prefab, transform);
+        currentObstacle.transform.localPosition = Vector3.zero;
+        currentObstacle.transform.rotation = Quaternion.identity;
+        currentObstacle.SpawnDecorations();
     }
-
 }

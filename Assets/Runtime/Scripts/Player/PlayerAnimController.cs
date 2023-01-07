@@ -22,4 +22,9 @@ public class PlayerAnimController : MonoBehaviour
     {
         animator.SetTrigger(PlayerAnimConstants.deathTrigger);
     }
+
+    public void GameStartAnim()
+    {
+        animator.SetTrigger(PlayerAnimationConstants.StartGameTrigger);
+    }
 }

@@ -186,6 +186,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6776553886684548685, guid: a4e9f30d1a2af1e4fb690fdd0032a208, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776553886684548685, guid: a4e9f30d1a2af1e4fb690fdd0032a208, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776553886684548685, guid: a4e9f30d1a2af1e4fb690fdd0032a208, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -225,6 +233,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6776553886684548686, guid: a4e9f30d1a2af1e4fb690fdd0032a208, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 8a8f51bef7c58614e87661f5ac6c0669, type: 2}
     - target: {fileID: 6776553886684548721, guid: a4e9f30d1a2af1e4fb690fdd0032a208, type: 3}
       propertyPath: m_Name
       value: Ground_1

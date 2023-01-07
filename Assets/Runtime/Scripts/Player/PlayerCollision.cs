@@ -2,39 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(PlayerAnimationController))]
 public class PlayerCollision : MonoBehaviour
 {
-    PlayerController playerController;
-    PlayerAnimController playerAnimController;
-    [SerializeField] GameMode gameMode;
-    [SerializeField] Collider regularCollider;
-    [SerializeField] Collider rollCollider;
+    [SerializeField] private GameMode gameMode;
+    private PlayerController playerController;
+    private PlayerAnimationController animationController;
 
-    void Awake()
+    private void Awake()
     {
         playerController = GetComponent<PlayerController>();
-        playerAnimController = GetComponent<PlayerAnimController>();
+        animationController = GetComponent<PlayerAnimationController>();
     }
 
-    void Update()
-    {
-        if(playerController.IsRolling)
-        {
-            regularCollider.enabled = false;
-        }
-        else
-        {
-            regularCollider.enabled = true;
-        }
-    }
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         Obstacle obstacle = other.GetComponent<Obstacle>();
-        if(obstacle != null)
+        if (obstacle != null)
         {
-            playerAnimController.DeathAnim();
-            playerController.Death();
+            playerController.Die();
+            animationController.Die();
             gameMode.OnGameOver();
+            obstacle.PlayCollisionFeedback(other);
         }
     }
 }
